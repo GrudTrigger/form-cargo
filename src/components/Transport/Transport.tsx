@@ -12,15 +12,12 @@ interface TransportProps {
   typeCar: string;
   index: number;
   counerMoversAndPassenger: (
-    type: string,
-    action: string,
-    index?: number
+      type: string,
+      action: string,
+      index?: number
   ) => void;
   removeTransport: (index: number) => void;
-  handleSelectChange: (
-      event: Event | undefined,
-      index: number
-  ) => void;
+  handleSelectChange: (selectedOption: { value: string, label: string } | undefined, index: number) => void;
 }
 interface CheckboxState {
   movers: boolean;
@@ -55,11 +52,12 @@ const Transport = ({
     { value: 'Любая фура', label: 'Любая фура' },
     { value: 'Любой фургон', label: 'Любая фургон' },
   ];
-  const getValue = () => {
-    return typeCar ? options.find(c => c.value === typeCar) : null;
+  const getValue = (): { value: string; label: string } | undefined => {
+    return typeCar ? options.find((c) => c.value === typeCar) : undefined;
   };
+
   const customStyles = {
-    control: (provided
+    control: (provided:any
     ) => ({
       ...provided,
       width: '334px',
@@ -74,7 +72,7 @@ const Transport = ({
     indicatorSeparator: () => ({
       display: 'none',
     }),
-    dropdownIndicator: (provided) => ({
+    dropdownIndicator: (provided: any) => ({
       ...provided,
       color: '#4C73E3',
     }),
@@ -128,7 +126,7 @@ const Transport = ({
           <Select
               options={options}
               value={getValue()}
-              onChange={(selectedOption) => handleSelectChange(selectedOption, index)}
+              onChange={(selectedOption) => handleSelectChange(selectedOption as { value: string, label: string } | undefined, index)}
               styles={customStyles}
           />
           <svg

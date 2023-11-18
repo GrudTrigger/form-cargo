@@ -104,20 +104,22 @@ const Form: React.FC = () => {
   };
 
   const handleSelectChange = (
-      selectedOption: { value: string; label: string }, // тип объекта опции
+      selectedOption: { value: string; label: string } | undefined,
       index: number
   ) => {
-    const { value } = selectedOption;
+    if (selectedOption) {
+      const { value } = selectedOption;
 
-    setFormState((prevState) => {
-      const updatedTransports = [...prevState.transports];
-      updatedTransports[index].typeCar = value;
+      setFormState((prevState) => {
+        const updatedTransports = [...prevState.transports];
+        updatedTransports[index].typeCar = value;
 
-      return {
-        ...prevState,
-        transports: updatedTransports,
-      };
-    });
+        return {
+          ...prevState,
+          transports: updatedTransports,
+        };
+      });
+    }
   };
 
   const addTransport = () => {

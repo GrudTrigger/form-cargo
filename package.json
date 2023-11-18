@@ -2,6 +2,7 @@
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://grudtrigger.github.io/form-cargo/",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,9 +10,10 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@types/react-select": "^5.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-select": "^5.8.0"
