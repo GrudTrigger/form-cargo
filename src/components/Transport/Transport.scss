@@ -1,0 +1,102 @@
+.transport {
+    display: flex;
+    align-items: center;
+    column-gap: 21px;
+}
+.form {
+    &__transport{
+        margin-top: 20px;
+        width: 802px;
+        height: 317px;
+        padding: 20px;
+        border-radius: 21px;
+        border: 1px solid #4C73E3;
+        background: #FFF;
+        display: flex;
+        justify-content: space-between;
+        align-items:flex-start;
+    }
+    &__switchs{
+        width: 350.5px;
+        height: 231px;
+        padding: 16px 18px;
+        border-radius: 21px;
+        border: 1px solid #DEE4F0;
+        background: #FFF;
+        margin-top: 13px;
+        &__container {
+            margin-top: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+    }
+    &__select {
+        width: 334px;
+        height: 54px;
+        padding: 16px 0px 16px 16px;
+        border-radius: 16px;
+        border: 1px solid #DEE4F0;
+        background: #FFF;
+        color: #787978;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        transition: box-shadow 0.3s;
+        display: inline-block;
+        position: relative;
+
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: url('/public/arrow.svg') no-repeat right center;
+        background-size: 55px;
+        &__options {
+            margin-top: 10px;
+            color: #787978;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
+        &__container{
+            width: 362px;
+            margin-top: 41px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+        }
+    }
+    &__select:hover{
+        box-shadow: 0px 0px 3px 1px rgba(53, 165, 0, 0.70);
+    }
+    &__select:focus {
+        border-radius: 16px;
+        border: 2px solid #4C73E3;
+        box-shadow: none;
+        outline: none
+    }
+    &__btn__add {
+        margin-top: 15px;
+        width: 248px;
+        height: 52px;
+        padding: 17.5px 18px 16.5px 18px;
+        border-radius: 16px;
+        border: 1px solid #4C73E3;
+        color: #4C73E3;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+        background-color: #FFF;
+        cursor: pointer;
+    }
+    &__btn__delete {
+        background-color: none;
+        border: none;
+    }
+}

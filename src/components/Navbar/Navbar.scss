@@ -1,0 +1,21 @@
+.navbar {
+    height: 71px;
+    background-color: #4C73E3;
+    &__container {
+        max-width: 1060px;
+        padding-top: 20px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__links {
+        display: flex;
+        column-gap: 44px;
+    }
+
+    &__link:hover{
+        border-bottom: 2px solid #F2C94C;
+    }
+}
