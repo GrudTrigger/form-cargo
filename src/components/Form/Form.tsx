@@ -5,11 +5,7 @@ import React, { useState } from "react";
 import Transport from "../Transport/Transport";
 import Modal from "../Modal/Modal";
 
-// Поправить стили инпутов, названия классов в scss назвать по нормальному, добавить ховер и фокус.
-// у инпутов поставить рекваиред
-// во всех компонентах сделать : React.FC
-// Переименовать функция в Counter
-// Проверить нужно ли айди в добавление транспорта
+
 interface Car {
   id: number;
   name: string;

@@ -64,9 +64,9 @@ const Transport = ({
       height: '54px',
       borderRadius: '16px',
       border: '1px solid #DEE4F0',
-      transition: 'box-shadow 0.3s', // Добавляем плавное изменение тени
+      transition: 'box-shadow 0.3s',
       ':hover': {
-        boxShadow: '0px 0px 3px 1px rgba(53, 165, 0, 0.70)', // Тень при наведении
+        boxShadow: '0px 0px 3px 1px rgba(53, 165, 0, 0.70)',
       },
     }),
     indicatorSeparator: () => ({
