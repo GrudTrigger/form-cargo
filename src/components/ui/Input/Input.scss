@@ -33,4 +33,11 @@
     font-size: 16px;
     outline: none;
   }
-  
+  .input::placeholder {
+    color: #787978;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+  }

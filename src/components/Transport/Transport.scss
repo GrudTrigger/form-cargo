@@ -15,7 +15,16 @@
         display: flex;
         justify-content: space-between;
         align-items:flex-start;
+        &-label {
+            color: #787978;
+            font-family: Open Sans;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+        }
     }
+
     &__switchs{
         width: 350.5px;
         height: 231px;
@@ -99,4 +108,28 @@
         background-color: none;
         border: none;
     }
+}
+
+.custom-select {
+    &__menu{ 
+        border-radius: 16px !important;
+        background: #FFF !important;
+        box-shadow: 0px 4px 10px 0px rgba(151, 151, 151, 0.25) !important;
+    }
+    &__option {
+        color: #787978 !important;
+        font-family: Inter !important;
+        font-size: 14px !important;
+        font-style: normal !important;
+        font-weight: 300 !important;
+        line-height: normal !important;
+        &--is-selected{
+            background: #4C73E3 !important;
+            color: #FFF !important;
+        }
+     }
+     &__dropdown-indicator {
+        color: #4C73E3 !important;
+        font-size: 18px !important;
+     }
 }

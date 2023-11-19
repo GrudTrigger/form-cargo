@@ -173,7 +173,7 @@ const Form: React.FC = () => {
   };
 
   return (
-    <div className="form__container">
+    <section className="form__container">
       <h1 className="form__title">Заявка на отправку груза</h1>
       <form onSubmit={submitForm}>
         <div className="form__where">
@@ -233,7 +233,7 @@ const Form: React.FC = () => {
             handleSelectChange={handleSelectChange}
           />
         ))}
-        <button type="button" className="form__btn__add" onClick={addTransport}>
+        <button type="button" className='form__btn-add' onClick={addTransport}>
           + Добавить еще транспорт
         </button>
 
@@ -288,7 +288,7 @@ const Form: React.FC = () => {
         </div>
       </form>
       {modalOpen && <Modal formState={formState} setModalOpen={setModalOpen} />}
-    </div>
+    </section>
   );
 };
 

@@ -1,12 +1,12 @@
-.form {
+.form{
     &__container{
-        max-width: 850px;
-        margin-left: 110px;
-        padding-top: 40px;
+        max-width: 1020px;
+        margin: 0 auto;
+        padding: 40px 10px 0 10px;
     }
     &__title {
         color: #4C73E3;
-        font-family: Open Sans Hebrew;
+        font-family: Open Sans sans-serif;
         font-size: 35px;
         font-weight: 800;
         line-height: normal;
@@ -36,7 +36,7 @@
 
     &__subtitle{
         color: #262D38;
-        font-family: Open Sans Hebrew;
+        font-family: Open Sans sans-serif;
         font-size: 24px;
         font-weight: 800;
         line-height: normal;
@@ -165,25 +165,31 @@
             align-items: flex-start;
         }
     }
-    &__btn__add {
+    &__btn-add {
         margin-top: 15px;
         width: 248px;
         height: 52px;
-        padding: 17.5px 18px 16.5px 18px;
-        border-radius: 16px;
-        border: 1px solid #4C73E3;
         color: #4C73E3;
         font-family: Inter;
-        font-size: 16px;
+        font-size: 15px;
+        font-style: normal;
         font-weight: 600;
         line-height: normal;
-        background-color: #FFF;
         cursor: pointer;
         transition: all 0.4s;
+        background-color: transparent;
+        border-radius: 16px;
+        border: 1px solid #4C73E3;
     }
-    &__btn__add:hover {
+    &__btn-add:hover {
+        border-radius: 16px;
         border: 1px solid #88A7FF;
         color: #88A7FF;
+        font-family: Inter;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
     &__contacts{
         margin-top: 20px;
@@ -291,3 +297,5 @@
     }
 
 }
+
+

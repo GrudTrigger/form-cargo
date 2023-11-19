@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <Navbar />
-      <Form />
+      <main>
+        <Form />
+      </main>
     </>
   );
 }

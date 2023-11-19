@@ -4,7 +4,6 @@ import Switcher from "../ui/Switcher/Switcher";
 import "./Transport.scss";
 import Select from "react-select";
 
-
 interface TransportProps {
   name: string;
   movers: number;
@@ -12,12 +11,15 @@ interface TransportProps {
   typeCar: string;
   index: number;
   counerMoversAndPassenger: (
-      type: string,
-      action: string,
-      index?: number
+    type: string,
+    action: string,
+    index?: number
   ) => void;
   removeTransport: (index: number) => void;
-  handleSelectChange: (selectedOption: { value: string, label: string } | undefined, index: number) => void;
+  handleSelectChange: (
+    selectedOption: { value: string; label: string } | undefined,
+    index: number
+  ) => void;
 }
 interface CheckboxState {
   movers: boolean;
@@ -48,33 +50,40 @@ const Transport = ({
     });
   };
   const options = [
-    { value: 'Любая газель', label: 'Любая газель' },
-    { value: 'Любая фура', label: 'Любая фура' },
-    { value: 'Любой фургон', label: 'Любая фургон' },
+    { value: "Любая газель", label: "Любая газель" },
+    { value: "Любая фура", label: "Любая фура" },
+    { value: "Любой фургон", label: "Любая фургон" },
   ];
   const getValue = (): { value: string; label: string } | undefined => {
     return typeCar ? options.find((c) => c.value === typeCar) : undefined;
   };
 
   const customStyles = {
-    control: (provided:any
-    ) => ({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    control: (provided: any) => ({
       ...provided,
-      width: '334px',
-      height: '54px',
-      borderRadius: '16px',
-      border: '1px solid #DEE4F0',
-      transition: 'box-shadow 0.3s',
-      ':hover': {
-        boxShadow: '0px 0px 3px 1px rgba(53, 165, 0, 0.70)',
+      width: "334px",
+      height: "54px",
+      borderRadius: "16px",
+      border: "1px solid #DEE4F0",
+      transition: "box-shadow 0.3s",
+      color: "#787978",
+      fontFamily: "Inter",
+      fontSize: "16px",
+      fontStyle: "normal",
+      fontWeight: "300",
+      lineHeight: "normal",
+      ":hover": {
+        boxShadow: "0px 0px 3px 1px rgba(53, 165, 0, 0.70)",
       },
     }),
     indicatorSeparator: () => ({
-      display: 'none',
+      display: "none",
     }),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     dropdownIndicator: (provided: any) => ({
       ...provided,
-      color: '#4C73E3',
+      color: "#4C73E3",
     }),
   };
 
@@ -85,49 +94,71 @@ const Transport = ({
           <h3 className="form__subtitle">{name + " " + (index + 1)}</h3>
           <div className="form__switchs">
             <div className="form__switchs__container">
-              <label htmlFor="">Грузчики</label>
+              <label htmlFor="" className="form__transport-label">
+                Грузчики
+              </label>
               <Switcher
                 handleCheckboxChange={handleCheckboxChange}
                 isChecked={isChecked}
                 type={"movers"}
               />
             </div>
+            {isChecked.movers ? (
+              <div className="form__switchs__container">
+                <label htmlFor="" className="form__transport-label">
+                  Кол-во грузчиков
+                </label>
+                <Counter
+                  counterIncrease={counerMoversAndPassenger}
+                  num={movers}
+                  type="movers"
+                  indexCar={index}
+                  isChecked={isChecked}
+                />
+              </div>
+            ) : (
+              ""
+            )}
             <div className="form__switchs__container">
-              <label htmlFor="">Кол-во грузчиков</label>
-              <Counter
-                counterIncrease={counerMoversAndPassenger}
-                num={movers}
-                type="movers"
-                indexCar={index}
-                isChecked={isChecked}
-              />
-            </div>
-            <div className="form__switchs__container">
-              <label htmlFor="">Пассажиры</label>
+              <label htmlFor="" className="form__transport-label">
+                Пассажиры
+              </label>
               <Switcher
                 handleCheckboxChange={handleCheckboxChange}
                 isChecked={isChecked}
                 type={"passengers"}
               />
             </div>
-            <div className="form__switchs__container">
-              <label htmlFor="">Кол-во пассажиров</label>
-              <Counter
-                counterIncrease={counerMoversAndPassenger}
-                num={passengers}
-                type="passengers"
-                indexCar={index}
-                isChecked={isChecked}
-              />
-            </div>
+            {isChecked.passengers ? (
+              <div className="form__switchs__container">
+                <label htmlFor="" className="form__transport-label">
+                  Кол-во пассажиров
+                </label>
+                <Counter
+                  counterIncrease={counerMoversAndPassenger}
+                  num={passengers}
+                  type="passengers"
+                  indexCar={index}
+                  isChecked={isChecked}
+                />
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         <div className="form__select__container">
           <Select
-              options={options}
-              value={getValue()}
-              onChange={(selectedOption) => handleSelectChange(selectedOption as { value: string, label: string } | undefined, index)}
-              styles={customStyles}
+            options={options}
+            value={getValue()}
+            onChange={(selectedOption) =>
+              handleSelectChange(
+                selectedOption as { value: string; label: string } | undefined,
+                index
+              )
+            }
+            styles={customStyles}
+            classNamePrefix="custom-select"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
